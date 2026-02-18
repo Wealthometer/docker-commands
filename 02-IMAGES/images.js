@@ -16,8 +16,7 @@ docker pull nginx
 docker image inspect nginx
 
 // this will interactively create an image
-docker container run -it \
---name sample alpine:3.17 sh
+docker container run -it --name sample alpine:3.17 sh
 
 // this will show changes that have been made in our container concerning our base image
 docker container diff sample
