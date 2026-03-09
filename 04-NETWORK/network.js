@@ -25,8 +25,6 @@ docker run --name mongo -d --network mongo -p 27017:27017 \
 // this will log you into the mongdb database from inside a container
 mongosh -u root -p secret --authenticationDatabase admin
 
-
-
 // this will run a mongo-express container while attaching it to a network
 docker run --name mongo-express --network mongo -d -p 8081:8081 \
 -e ME_CONFIG_MONGODB_ADMINUSERNAME=root \
