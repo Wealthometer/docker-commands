@@ -15,6 +15,8 @@ echo $PWD
 docker run -v $PWD:/tmp bash \
 bash -c "echo foo > /tmp/bar.txt && cat /tmp/bar.txt"
 
+docker run -v "${PWD}:/tmp" bash bash -c "echo foo > /tmp/bar.txt && cat /tmp/bar.txt"
+
 // double check to see the information is on the host
 ls
 
@@ -25,6 +27,11 @@ cat bar.txt
 docker run -v $PWD:/tmp bash \
 bash -c "cat /tmp/bar.txt"
 
+docker run -v "${PWD}:/tmp" bash bash -c "cat /tmp/bar.txt"
+
 //mount a bootstrap website to a running container via volumes
 docker run --name dashboard \
 -v "$PWD:/usr/share/nginx/html" -d -p 8080:80 nginx
+
+docker run --name dashboard `
+-v "${PWD}:/usr/share/nginx/html" -d -p 8080:80 nginx

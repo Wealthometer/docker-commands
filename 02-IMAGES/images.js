@@ -7,7 +7,7 @@ docker image --help
 docker image ls
 
 // this will delete an image from your docker instance
-docker image rm nginx
+docker image rm nginx   
 docker image rm -f nginx
 docker rmi nginx
 
