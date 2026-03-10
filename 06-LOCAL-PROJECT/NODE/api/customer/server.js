@@ -4,7 +4,7 @@ const app        = express();
 const cors       = require('cors')
 const axios      = require("axios")
 
-const PORT = process.env.PORT || 8080;       
+const PORT = process.env.PORT || 8080;          
 const KILL_IN_SECONDS = process.env.KILL_IN_SECONDS
 const ORDER_SERVICE = process.env.ORDER_SERVICE || "localhost:8081"
 const APP_NAME = process.env.APP_NAME
