@@ -1,6 +1,7 @@
 version: "3.9"
 
 services:
+
   order-service:
     image: node-order-service:latest
     container_name: order-service
@@ -23,6 +24,16 @@ services:
       - ORDER_SERVICE=order-service:8081
     depends_on:
       - order-service
+    networks:
+      - microservices-network
+
+  react-frontend:
+    image: react-frontend:latest
+    container_name: react-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - customer-service
     networks:
       - microservices-network
 

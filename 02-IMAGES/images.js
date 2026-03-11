@@ -56,10 +56,11 @@ docker push tsola2002/omatsolas-nginx-repo:latest
 
 // this will export an existing image
 docker image save -o ./backup/my-alpine.tar my-alpine
+docker save -o customer-ServiceWorker.tar node-customer-service:latest
 
 // this import an existing image 
 docker image load -i ./backup/my-alpine.tar
-
+docker load -i customer-service.tar
 
 // login to the container and check the files out
 docker exec -it dashboard sh
